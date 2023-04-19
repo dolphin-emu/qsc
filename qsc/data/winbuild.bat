@@ -26,6 +26,7 @@ IF "%USE_VS%"=="1" (
 
 
 :configure
+rem TODO find a way to shove in /pathmap:%VCToolsInstallDir%=v:\
 set DETERMINISM_COMPILE="/experimental:deterministic"
 rem incremental:no only really needed for debug target, which defaults it on
 set DETERMINISM_LINK="/experimental:deterministic /INCREMENTAL:NO"

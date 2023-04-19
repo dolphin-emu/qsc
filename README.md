@@ -44,7 +44,7 @@ Then, prefix this to `%PATH%` in your current shell.
 
 For example:
 ```
-set PATH=%LOCALAPPDATA%\Programs\Python\Python310;%PATH%
+set PATH=%LOCALAPPDATA%\Programs\Python\Python311;%PATH%
 ```
 
 ## License

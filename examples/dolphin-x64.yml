@@ -1,4 +1,4 @@
-release: 6.3.0
+release: 6.5.0
 platform: win32-msvc
 name: dolphin.x64
 
@@ -9,7 +9,7 @@ compiler:
     vcvarsall: x64
 
 configure:
-    additional_parameters: -c++std c++20 -debug-and-release -force-debug-info -ltcg -no-opengl -no-pch
+    additional_parameters: -c++std c++2b -debug-and-release -force-debug-info -ltcg -no-opengl -no-pch
     nomake:
         - examples
         - tests
@@ -23,6 +23,10 @@ configure:
         - qtdatavis3d
         - qtdeclarative
         - qtdoc
+        - qtgrpc
+        - qthttpserver
+        - qtlanguageserver
+        - qtlocation
         - qtlottie
         - qtmqtt
         - qtmultimedia
@@ -30,6 +34,8 @@ configure:
         - qtopcua
         - qtpositioning
         - qtquick3d
+        - qtquick3dphysics
+        - qtquickeffectmaker
         - qtquicktimeline
         - qtremoteobjects
         - qtscxml
@@ -37,6 +43,7 @@ configure:
         - qtserialbus
         - qtserialport
         - qtshadertools
+        - qtspeech
         - qtsvg
         - qttools
         - qttranslations

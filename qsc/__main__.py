@@ -142,4 +142,10 @@ if __name__ == "__main__":
     # Post process output
     postprocess_dir(output_path, config.get("postprocess", {}))
 
+    # Bit of a hack: Qt cmake files rely on mkspec dirs being present
+    # even though the contents aren't really used. Ensure they exist.
+    # see lib\cmake\Qt6\QtBuild.cmake
+    if compiler.get("name") == "visual_studio":
+        os.makedirs(os.path.join(output_path, "mkspecs/win32-msvc"), exist_ok=True)
+
     print("Done. Result in {}".format(output_path))
