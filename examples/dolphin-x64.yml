@@ -1,4 +1,4 @@
-release: 6.5.0
+release: 6.5.1
 platform: win32-msvc
 name: dolphin.x64
 
@@ -44,7 +44,6 @@ configure:
         - qtserialport
         - qtshadertools
         - qtspeech
-        - qtsvg
         - qttools
         - qttranslations
         - qtvirtualkeyboard
@@ -56,11 +55,15 @@ configure:
     feature:
         concurrent: false
         dbus: false
+        gif: false
+        ico: false
         imageformat_bmp: false
+        jpeg: false
         network: false
         printsupport: false
         qmake: false
         sql: false
+        #style-windowsvista: false
         testlib: false
         textmarkdownreader: false
         textmarkdownwriter: false
@@ -78,11 +81,16 @@ postprocess:
     delete_regex:
         # needed if the outputs are to be used as cross compile host tools
         #- bin\\android.*
-        - bin\\Qt6Xml.*
+        - .*\.prl
         - bin\\.*\.bat
         - bin\\.*\.cmake
         - bin\\.*\.pl
+        - bin\\Qt6Xml.*
         - lib\\metatypes\\qt6xml_.*\.json
         - lib\\Qt6Xml.*
-        - .*\.prl
+        - plugins\\imageformats\\qicns.*
+        - plugins\\imageformats\\qtga.*
+        - plugins\\imageformats\\qwbmp.*
+        - plugins\\platforms\\qminimal.*
+        - plugins\\platforms\\qoffscreen.*
     archive_pdbs: true
