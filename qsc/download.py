@@ -28,6 +28,7 @@ def source_url(release):
 
 def download_file(url, path):
     with requests.get(url, stream=True) as request:
+        request.raise_for_status()
         with open(path, "wb") as file:
             shutil.copyfileobj(request.raw, file)
 
