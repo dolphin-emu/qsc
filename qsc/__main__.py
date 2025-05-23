@@ -63,7 +63,7 @@ if __name__ == "__main__":
     build_dir = release+"_"+config["name"]+".build"
     compiler = config["compiler"]
 
-    download_release(release)
+    download_release(release, config.get("url"))
     extract_release(release)
 
     if os.path.isdir(build_dir):

@@ -32,8 +32,10 @@ def download_file(url, path):
         with open(path, "wb") as file:
             shutil.copyfileobj(request.raw, file)
 
-def download_release(release):
-    url = source_url(release)
+def download_release(release, url):
+    if url is None:
+        url = source_url(release)
+    
     archive_dir = Path("archives")
     download_path = archive_dir / f"qt-everywhere-src-{release}.tar.xz"
 
