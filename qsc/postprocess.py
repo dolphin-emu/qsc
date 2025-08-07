@@ -56,7 +56,7 @@ def postprocess_dir(basedir, config):
                 elif os.path.isfile(e):
                     os.remove(e)
 
-    if config.get('archive_pdbs', False):
+    if config.get('archive_pdbs', True):
         with tarfile.open('pdbs.tar.xz', 'w:xz') as archive:
             print('archiving pdbs...')
             for path in Path(".").rglob("*.pdb"):
