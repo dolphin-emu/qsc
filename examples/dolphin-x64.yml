@@ -1,4 +1,4 @@
-release: 6.5.1
+release: 6.8.3
 platform: win32-msvc
 name: dolphin.x64
 
@@ -17,12 +17,14 @@ configure:
         - qt3d
         - qt5compat
         - qtactiveqt
+        - qtcanvaspainter
         - qtcharts
         - qtcoap
         - qtconnectivity
         - qtdatavis3d
         - qtdeclarative
         - qtdoc
+        - qtgraphs
         - qtgrpc
         - qthttpserver
         - qtlanguageserver
@@ -32,6 +34,7 @@ configure:
         - qtmultimedia
         - qtnetworkauth
         - qtopcua
+        - qtopenapi
         - qtpositioning
         - qtquick3d
         - qtquick3dphysics
@@ -44,6 +47,7 @@ configure:
         - qtserialport
         - qtshadertools
         - qtspeech
+        - qttasktree
         - qttools
         - qttranslations
         - qtvirtualkeyboard
