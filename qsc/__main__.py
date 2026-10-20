@@ -19,6 +19,7 @@
 
 import argparse
 import os
+import subprocess
 from pathlib import Path
 
 import yaml
@@ -138,12 +139,14 @@ if __name__ == "__main__":
     os.putenv("QT_CONFIGURE_OPTIONS", configure_options)
 
     if qsc.is_windows():
-        os.system(qsc.WINBUILD_PATH)
+        build_command = 'cmd.exe /d /s /c ""{}""'.format(qsc.WINBUILD_PATH)
     elif qsc.is_mac():
-        os.system(qsc.MACBUILD_PATH)
+        build_command = [qsc.MACBUILD_PATH]
     else:
         print("Not supported yet, sorry :/")
         exit(1)
+
+    subprocess.run(build_command, check=True)
 
     # Post process output
     postprocess_dir(output_path, config.get("postprocess", {}))
